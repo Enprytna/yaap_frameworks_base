@@ -722,13 +722,6 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
         return advancedRebootEnabled;
     }
 
-    private boolean isSecureLocked() {
-        if (mKeyguardShowing) {
-            return mKeyguardStateController.isUnlocked();
-        }
-        return false;
-    }
-
     @VisibleForTesting
     boolean shouldDisplayLockdown(UserInfo user) {
         if (user == null) {
@@ -975,7 +968,7 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
         @Override
         public void onPress() {
             mUiEventLogger.log(GlobalActionsEvent.GA_REBOOT_PRESS);
-            if (!mRebootMenu && advancedRebootEnabled(mContext) && !isSecureLocked()) {
+            if (!mRebootMenu && advancedRebootEnabled(mContext)) {
                 mRebootMenu = true;
                 mCurrentMenuActions = mRebootMenuActions;
                 createActionItems();
