@@ -199,5 +199,6 @@ public class SecureSettings {
         Settings.Secure.QS_SHOW_BRIGHTNESS,
         Settings.Secure.QS_BRIGHTNESS_POSITION_BOTTOM,
         Settings.Secure.QS_SHOW_AUTO_BRIGHTNESS_BUTTON,
+        Settings.Secure.ENABLE_LOCATION_PRIVACY_INDICATOR,
     };
 }
